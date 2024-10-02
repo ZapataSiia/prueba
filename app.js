@@ -129,5 +129,6 @@ app.get('/logout', (req, res) => {
 })
 
 app.listen('3000', (req, res) => {
-    console.log('servidor corriendo en http://localhost:3000')
+    //cambio de puerto
+    console.log('servidor corriendo en http://localhost:3001')
 })
