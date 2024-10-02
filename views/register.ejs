@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body>
+    <div class="register-form">
+        <h1>Formulario de Registro</h1>
+        <form action="/register" method="post">
+            <label for="user">Nombre de Usuario</label>
+            <input type="text" name="user" required>
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" name="nombre" required>
+            <label for="rol">Rol</label>
+            <select name="rol" id="rol" class="select-css">
+                <option value="admin">Admin</option>
+                <option value="data entry">Data Entry</option>
+            </select>
+            <label for="pass">Contraseña</label>
+            <input type="password" name="pass" required>
+            <div style="display:inline;">
+                <input type="submit" class="btn-save" value="Guardar"><a href="/" class="btn-cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert !="undefined" ) {%>
+        <script>
+            swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton:<%= showConfirmButton %>,
+                timer:<%= timer %>
+            }).then(() => {
+                    window.location = '/ <%= ruta %>'
+                })
+        </script>
+        <% } %>
+</body>
+
+</html>
